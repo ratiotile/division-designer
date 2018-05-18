@@ -1,0 +1,64 @@
+{
+  "ranger_brigade": {
+    "usable_by": [
+      "USA"
+    ],
+    "type": "land",
+    "sprite": "Elite",
+    "unit_group": "infantry_unit_type",
+    "can_paradrop": "yes",
+    "minimum_of_type": 6,
+    "max_percentage_of_type": 0.04,
+    "max_strength": 30,
+    "default_organisation": 40,
+    "default_morale": 0.4,
+    "officers": 130,
+    "build_cost_ic": 2.67,
+    "build_cost_manpower": 4,
+    "build_time": 150,
+    "repair_cost_multiplier": 0.05,
+    "maximum_speed": 4,
+    "transport_weight": 5,
+    "supply_consumption": 0.67,
+    "fuel_consumption": 0,
+    "radio_strength": 1,
+    "defensiveness": 4,
+    "toughness": 3,
+    "softness": 1,
+    "air_defence": 2,
+    "suppression": 1,
+    "soft_attack": 2,
+    "hard_attack": 0.67,
+    "air_attack": 0.33,
+    "ap_attack": 1,
+    "hills": {
+      "attack": 0.05,
+      "movement": 0.05
+    },
+    "jungle": {
+      "attack": 0.1,
+      "movement": 0.15
+    },
+    "forest": {
+      "attack": 0.1,
+      "movement": 0.15
+    },
+    "woods": {
+      "attack": 0.1,
+      "movement": 0.15
+    },
+    "night": {
+      "attack": 0.1,
+      "defence": 0.1,
+      "movement": 0.1
+    },
+    "urban": {
+      "attack": 0.2,
+      "defence": 0.15
+    },
+    "combat_width": 1,
+    "completion_size": 0.2,
+    "on_completion": "infantry_practical",
+    "priority": 9
+  }
+}

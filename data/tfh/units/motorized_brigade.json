@@ -1,0 +1,61 @@
+{
+  "motorized_brigade": {
+    "type": "land",
+    "sprite": "Motor",
+    "active": "no",
+    "unit_group": "infantry_unit_type",
+    "is_mobile": "yes",
+    "max_strength": 30,
+    "default_organisation": 30,
+    "default_morale": 0.3,
+    "officers": 100,
+    "build_cost_ic": 4.67,
+    "build_cost_manpower": 3.33,
+    "build_time": 120,
+    "repair_cost_multiplier": 0.05,
+    "maximum_speed": 8,
+    "transport_weight": 15,
+    "supply_consumption": 1,
+    "fuel_consumption": 1,
+    "radio_strength": 1,
+    "defensiveness": 3.5,
+    "toughness": 3,
+    "softness": 0.7,
+    "air_defence": 1.5,
+    "suppression": 0.67,
+    "soft_attack": 2,
+    "hard_attack": 0.67,
+    "air_attack": 0.33,
+    "ap_attack": 1,
+    "amphibious": {
+      "attack": -0.2
+    },
+    "urban": {
+      "attack": -0.1
+    },
+    "marsh": {
+      "attack": -0.1,
+      "movement": -0.8
+    },
+    "jungle": {
+      "attack": -0.2,
+      "movement": -0.4
+    },
+    "forest": {
+      "attack": -0.1,
+      "movement": -0.3
+    },
+    "woods": {
+      "attack": -0.05,
+      "movement": -0.2
+    },
+    "mountain": {
+      "attack": -0.2,
+      "movement": -0.4
+    },
+    "combat_width": 1,
+    "completion_size": 0.6,
+    "on_completion": "mobile_practical",
+    "priority": 9
+  }
+}

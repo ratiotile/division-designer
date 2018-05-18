@@ -24,9 +24,19 @@ import manpower_icon from '../images/icons/manpower.png'
 import build_time_icon from '../images/icons/build-time.png'
 
 import units from '../model/units.js'
-import arm_counter from "../images/counters/armor.png"
 
-const unit = units.armor // TODO: iterate
+// process unit data, adding in missing values
+const unit_defaults = {
+  ap_attack: 0,
+  armor_value: 0
+}
+const land_units = []
+for(const name in units){
+  const unit = units[name]
+  if(unit.type == "land"){
+    land_units.push(Object.assign({}, unit_defaults, unit))
+  }
+}
 
 
 const image_css = css({
@@ -48,31 +58,31 @@ const divBuilderCell = (value)=>(
   </td>
 )
 
-const divBuilderRow = ({type, str, org, cw, sa, ha, ap, av, aa, def, tou, ad, soft, spd, suppress, supply, fuel, officers, ic, mp, time})=>(
+const divBuilderRow = ({display, max_strength, default_organisation, combat_width, soft_attack, hard_attack, ap_attack, armor_value, air_attack, defensiveness, toughness, air_defence, softness, maximum_speed, suppression, supply_consumption, fuel_consumption, officers, build_cost_ic, build_cost_manpower, build_time})=>(
   <tr>
     <td>
-      <img src={type.counter} className={token_css} /> {type.name}
+      <img src={display.counter} className={token_css} /> {display.name}
     </td>
-    {divBuilderCell('3k')}
-    {divBuilderCell(60)}
-    {divBuilderCell(1)}
-    {divBuilderCell(5)}
-    {divBuilderCell(5)}
-    {divBuilderCell(8)}
-    {divBuilderCell(9)}
-    {divBuilderCell(0)}
-    {divBuilderCell(7)}
-    {divBuilderCell(13)}
-    {divBuilderCell(0)}
-    {divBuilderCell('15%')}
-    {divBuilderCell(8)}
-    {divBuilderCell(0)}
-    {divBuilderCell(1.66)}
-    {divBuilderCell(3.40)}
-    {divBuilderCell(100)}
-    {divBuilderCell(11.36)}
-    {divBuilderCell(2.33)}
-    {divBuilderCell(185)}
+    {divBuilderCell(max_strength)}
+    {divBuilderCell(default_organisation)}
+    {divBuilderCell(combat_width)}
+    {divBuilderCell(soft_attack)}
+    {divBuilderCell(hard_attack)}
+    {divBuilderCell(ap_attack)}
+    {divBuilderCell(armor_value)}
+    {divBuilderCell(air_attack)}
+    {divBuilderCell(defensiveness)}
+    {divBuilderCell(toughness)}
+    {divBuilderCell(air_defence)}
+    {divBuilderCell(softness)}
+    {divBuilderCell(maximum_speed)}
+    {divBuilderCell(suppression)}
+    {divBuilderCell(supply_consumption)}
+    {divBuilderCell(fuel_consumption)}
+    {divBuilderCell(officers)}
+    {divBuilderCell(build_cost_ic)}
+    {divBuilderCell(build_cost_manpower)}
+    {divBuilderCell(build_time)}
   </tr>
 )
 
@@ -81,6 +91,7 @@ const headerIcon = (icon)=>(
     <img src={icon} className={image_css} />
   </th>
 )
+
 
 // The main division builder page
 const IndexPage = () => (
@@ -109,29 +120,7 @@ const IndexPage = () => (
         {headerIcon(manpower_icon)}
         {headerIcon(build_time_icon)}
       </tr>
-      {divBuilderRow({
-        type: {counter: arm_counter, name: 'Armor'},
-        str: '3k',
-        org: 60,
-        width: 1,
-        sa: 5,
-        ha: 5,
-        ap: 8,
-        av: 9,
-        aa: 0,
-        def: 7,
-        tou: 13,
-        ad: 0,
-        soft: '15%',
-        spd: 8,
-        suppress: 0,
-        supply: 1.66,
-        fuel: 3.40,
-        officers: 100,
-        ic: 11.36,
-        mp: 2.33,
-        time: 185,
-      })}
+      {land_units.map(divBuilderRow)}
     </table>
   </div>
 )
