@@ -51,11 +51,11 @@ const unit_display = {
   },
   anti_air_brigade: {
     counter: aa_counter,
-    name: 'Anti-Air'
+    name: 'Anti-air'
   },
   anti_tank_brigade: {
     counter: at_counter,
-    name: 'Anti-Tank'
+    name: 'Anti-tank'
   },
   armor_brigade: {
     counter: arm_counter,
@@ -63,7 +63,7 @@ const unit_display = {
   },
   armored_car_brigade: {
     counter: ac_counter,
-    name: 'Armored Car'
+    name: 'Armoured Car'
   },
   artillery_brigade: {
     counter: art_counter,
@@ -95,7 +95,7 @@ const unit_display = {
   },
   heavy_armor_brigade: {
     counter: heavy_armor_counter,
-    name: 'Heavy Armor'
+    name: 'Heavy Armour'
   },
   hq_brigade: {
     counter: hq_counter,
@@ -111,7 +111,7 @@ const unit_display = {
   },
   light_armor_brigade: {
     counter: light_armor_counter,
-    name: 'Light Armor'
+    name: 'Light Armour'
   },
   marine_brigade: {
     counter: marine_counter,
@@ -119,7 +119,7 @@ const unit_display = {
   },
   mechanized_brigade: {
     counter: mechanized_counter,
-    name: 'Mechanized'
+    name: 'Mechanised'
   },
   militia_brigade: {
     counter: militia_counter,
@@ -127,11 +127,11 @@ const unit_display = {
   },
   mot_aa_brigade: {
     counter: mot_AA_counter,
-    name: 'Motorized AA'
+    name: 'Motorised A-A'
   },
   motorized_brigade: {
     counter: motorized_counter,
-    name: 'Motorized'
+    name: 'Motorised'
   },
   paratrooper_brigade: {
     counter: paratrooper_counter,
@@ -155,15 +155,15 @@ const unit_display = {
   },
   sp_artillery_brigade: {
     counter: sp_artillery_counter,
-    name: 'SP Artillery'
+    name: 'S-P Artillery'
   },
   sp_rct_artillery_brigade: {
     counter: sp_rct_artillery_counter,
-    name: 'SP Rocket Artillery'
+    name: 'S-P Rocket Artillery'
   },
   super_heavy_armor_brigade: {
     counter: super_heavy_armor_counter,
-    name: 'Super Heavy Armor'
+    name: 'SH Armoured'
   },
   tank_destroyer_brigade: {
     counter: tank_destroyer_counter,
