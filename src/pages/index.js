@@ -38,7 +38,6 @@ for(const name in units){
   }
 }
 
-
 const image_css = css({
   display: 'block',
   width: '100%',
@@ -52,15 +51,19 @@ const token_css = css({
   margin: 0
 })
 
+const cell_css = css({
+  fontSize: 12,
+})
+
 const divBuilderCell = (value)=>(
-  <td>
+  <td className={cell_css}>
     {value}
   </td>
 )
 
 const divBuilderRow = ({display, max_strength, default_organisation, combat_width, soft_attack, hard_attack, ap_attack, armor_value, air_attack, defensiveness, toughness, air_defence, softness, maximum_speed, suppression, supply_consumption, fuel_consumption, officers, build_cost_ic, build_cost_manpower, build_time})=>(
   <tr>
-    <td>
+    <td className={cell_css}>
       <img src={display.counter} className={token_css} /> {display.name}
     </td>
     {divBuilderCell(max_strength)}
