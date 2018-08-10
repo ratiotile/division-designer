@@ -87,11 +87,11 @@ const unit_display = {
   },
   guards_brigade: {
     counter: guards_counter,
-    name: 'Red Guard'
+    name: 'Red Guards'
   },
   gurkha_brigade: {
     counter: gurkha_counter,
-    name: 'Gurkha'
+    name: 'Gurkhas'
   },
   heavy_armor_brigade: {
     counter: heavy_armor_counter,
@@ -103,7 +103,7 @@ const unit_display = {
   },
   imperial_brigade: {
     counter: imperial_counter,
-    name: 'Imperial Guard'
+    name: 'Imperial Guards'
   },
   infantry_brigade: {
     counter: infantry_counter,

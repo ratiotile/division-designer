@@ -40,19 +40,23 @@ for(const name in units){
 
 const image_css = css({
   display: 'block',
-  width: '100%',
+  width: '24px',
   padding: 0,
-  margin: 0
+  margin: '0 auto 0 auto'
 })
 
 const token_css = css({
   display: 'inline-block',
   padding: 0,
-  margin: 0
+  margin: 0,
+  verticalAlign: '-15%'
 })
 
 const cell_css = css({
   fontSize: 12,
+  padding: 0,
+  margin: 0,
+  fontFamily: 'monospace'
 })
 
 const divBuilderCell = (value)=>(
@@ -66,31 +70,77 @@ const divBuilderRow = ({display, max_strength, default_organisation, combat_widt
     <td className={cell_css}>
       <img src={display.counter} className={token_css} /> {display.name}
     </td>
-    {divBuilderCell(max_strength)}
-    {divBuilderCell(default_organisation)}
-    {divBuilderCell(combat_width)}
-    {divBuilderCell(soft_attack)}
-    {divBuilderCell(hard_attack)}
-    {divBuilderCell(ap_attack)}
-    {divBuilderCell(armor_value)}
-    {divBuilderCell(air_attack)}
-    {divBuilderCell(defensiveness)}
-    {divBuilderCell(toughness)}
-    {divBuilderCell(air_defence)}
-    {divBuilderCell(softness)}
-    {divBuilderCell(maximum_speed)}
-    {divBuilderCell(suppression)}
-    {divBuilderCell(supply_consumption)}
-    {divBuilderCell(fuel_consumption)}
-    {divBuilderCell(officers)}
-    {divBuilderCell(build_cost_ic)}
-    {divBuilderCell(build_cost_manpower)}
-    {divBuilderCell(build_time)}
+    <td className={cell_css} style={{paddingLeft: '5px'}}>
+      {max_strength}
+    </td>
+    <td className={cell_css} style={{paddingLeft: '5px'}}>
+      {default_organisation}
+    </td>
+    <td className={cell_css} style={{textAlign: 'center'}}>
+      {combat_width}
+    </td>
+    <td className={cell_css} style={{padding: '0 3px 0 6px'}}>
+      {soft_attack}
+    </td>
+    <td className={cell_css} style={{padding: '0 3px 0 6px'}}>
+      {hard_attack}
+    </td>
+    <td className={cell_css} style={{paddingLeft: '6px'}}>
+      {ap_attack}
+    </td>
+    <td className={cell_css} style={{textAlign: 'center'}}>
+      {armor_value}
+    </td>
+    <td className={cell_css} style={{padding: '0 3px 0 6px'}}>
+      {air_attack}
+    </td>
+    <td className={cell_css} style={{padding: '0 3px 0 6px'}}>
+      {defensiveness}
+    </td>
+    <td className={cell_css} style={{padding: '0 3px 0 6px'}}>
+      {toughness}
+    </td>
+    <td className={cell_css} style={{padding: '0 3px 0 6px'}}>
+      {air_defence}
+    </td>
+    <td className={cell_css} style={{padding: '0 3px 0 6px'}}>
+      {softness}
+    </td>
+    <td className={cell_css} style={{padding: '0 3px 0 6px'}}>
+      {maximum_speed}
+    </td>
+    <td className={cell_css} style={{padding: '0 3px 0 6px'}}>
+      {suppression}
+    </td>
+    <td className={cell_css} style={{padding: '0 3px 0 6px'}}>
+      {supply_consumption}
+    </td>
+    <td className={cell_css} style={{padding: '0 3px 0 6px'}}>
+      {fuel_consumption}
+    </td>
+    <td className={cell_css}
+        style={{padding: '0 6px 0 6px', textAlign: 'right'}}>
+      {officers}
+    </td>
+    <td className={cell_css} style={{padding: '0 3px 0 6px'}}>
+      {build_cost_ic}
+    </td>
+    <td className={cell_css} style={{padding: '0 3px 0 6px'}}>
+      {build_cost_manpower}
+    </td>
+    <td className={cell_css}
+        style={{padding: '0 6px 0 6px', textAlign: 'right'}}>
+      {build_time}
+    </td>
   </tr>
 )
 
 const headerIcon = (icon)=>(
-  <th>
+  <th className={cell_css}
+      style={{
+        cursor: 'pointer',
+        textAlign: 'center'
+      }}>
     <img src={icon} className={image_css} />
   </th>
 )
