@@ -100,30 +100,34 @@ const headerIcon = (icon)=>(
 const IndexPage = () => (
   <div>
     <table>
-      <tr>
-        {headerIcon(priority_icon)}
-        {headerIcon(strength_icon)}
-        {headerIcon(organization_icon)}
-        {headerIcon(combat_width_icon)}
-        {headerIcon(soft_attack_icon)}
-        {headerIcon(hard_attack_icon)}
-        {headerIcon(piercing_icon)}
-        {headerIcon(armor_icon)}
-        {headerIcon(anti_air_icon)}
-        {headerIcon(defensiveness_icon)}
-        {headerIcon(toughness_icon)}
-        {headerIcon(air_defense_icon)}
-        {headerIcon(softness_icon)}
-        {headerIcon(speed_icon)}
-        {headerIcon(suppression_icon)}
-        {headerIcon(supply_icon)}
-        {headerIcon(fuel_icon)}
-        {headerIcon(officers_icon)}
-        {headerIcon(ic_cost_icon)}
-        {headerIcon(manpower_icon)}
-        {headerIcon(build_time_icon)}
-      </tr>
-      {land_units.map(divBuilderRow)}
+      <thead>
+        <tr>
+          {headerIcon(priority_icon)}
+          {headerIcon(strength_icon)}
+          {headerIcon(organization_icon)}
+          {headerIcon(combat_width_icon)}
+          {headerIcon(soft_attack_icon)}
+          {headerIcon(hard_attack_icon)}
+          {headerIcon(piercing_icon)}
+          {headerIcon(armor_icon)}
+          {headerIcon(anti_air_icon)}
+          {headerIcon(defensiveness_icon)}
+          {headerIcon(toughness_icon)}
+          {headerIcon(air_defense_icon)}
+          {headerIcon(softness_icon)}
+          {headerIcon(speed_icon)}
+          {headerIcon(suppression_icon)}
+          {headerIcon(supply_icon)}
+          {headerIcon(fuel_icon)}
+          {headerIcon(officers_icon)}
+          {headerIcon(ic_cost_icon)}
+          {headerIcon(manpower_icon)}
+          {headerIcon(build_time_icon)}
+        </tr>
+      </thead>
+      <tbody>
+        {land_units.map(divBuilderRow)}
+      </tbody>
     </table>
   </div>
 )
