@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import ReactTooltip from 'react-tooltip'
 import {css} from 'glamor'
 import priority_icon from '../images/icons/priority.png'
 import strength_icon from '../images/icons/strength.png'
@@ -135,12 +136,25 @@ const divBuilderRow = ({display, max_strength, default_organisation, combat_widt
   </tr>
 )
 
-const headerIcon = (icon)=>(
-  <th className={cell_css}
+const tooltip = css({
+  //position: 'relative',
+  //display: 'inline-block'
+})
+
+const tooltip_text = css({
+  visibility: 'hidden',
+  position: 'absolute',
+  zIndex: 1,
+})
+
+const headerIcon = (icon, help)=>(
+  <th className={`${cell_css}`}
       style={{
         cursor: 'pointer',
         textAlign: 'center'
-      }}>
+      }}
+      data-tip={help}
+  >
     <img src={icon} className={image_css} />
   </th>
 )
@@ -149,30 +163,31 @@ const headerIcon = (icon)=>(
 // The main division builder page
 const IndexPage = () => (
   <div>
+    <ReactTooltip />
     <table>
       <thead>
         <tr>
-          {headerIcon(priority_icon)}
-          {headerIcon(strength_icon)}
-          {headerIcon(organization_icon)}
-          {headerIcon(combat_width_icon)}
-          {headerIcon(soft_attack_icon)}
-          {headerIcon(hard_attack_icon)}
-          {headerIcon(piercing_icon)}
-          {headerIcon(armor_icon)}
-          {headerIcon(anti_air_icon)}
-          {headerIcon(defensiveness_icon)}
-          {headerIcon(toughness_icon)}
-          {headerIcon(air_defense_icon)}
-          {headerIcon(softness_icon)}
-          {headerIcon(speed_icon)}
-          {headerIcon(suppression_icon)}
-          {headerIcon(supply_icon)}
-          {headerIcon(fuel_icon)}
-          {headerIcon(officers_icon)}
-          {headerIcon(ic_cost_icon)}
-          {headerIcon(manpower_icon)}
-          {headerIcon(build_time_icon)}
+          {headerIcon(priority_icon, 'priority')}
+          {headerIcon(strength_icon, 'Strength')}
+          {headerIcon(organization_icon, 'Organization')}
+          {headerIcon(combat_width_icon, 'Combat Width')}
+          {headerIcon(soft_attack_icon, 'Soft Attack')}
+          {headerIcon(hard_attack_icon, 'Hard Attack')}
+          {headerIcon(piercing_icon, 'Armor Piercing')}
+          {headerIcon(armor_icon, 'Armor')}
+          {headerIcon(anti_air_icon, 'Anti-air')}
+          {headerIcon(defensiveness_icon, 'Defensiveness')}
+          {headerIcon(toughness_icon, 'Toughness')}
+          {headerIcon(air_defense_icon, 'Air Defense')}
+          {headerIcon(softness_icon, 'Softness')}
+          {headerIcon(speed_icon, 'Max Speed')}
+          {headerIcon(suppression_icon, 'Partisan Suppression')}
+          {headerIcon(supply_icon, 'Supply Consumption')}
+          {headerIcon(fuel_icon, 'Fuel Consumption')}
+          {headerIcon(officers_icon, 'Officers')}
+          {headerIcon(ic_cost_icon, 'IC Cost')}
+          {headerIcon(manpower_icon, 'Manpower Cost')}
+          {headerIcon(build_time_icon, 'Build Time')}
         </tr>
       </thead>
       <tbody>
