@@ -67,7 +67,9 @@ const divBuilderCell = (value)=>(
 )
 
 const divBuilderRow = ({display, max_strength, default_organisation, combat_width, soft_attack, hard_attack, ap_attack, armor_value, air_attack, defensiveness, toughness, air_defence, softness, maximum_speed, suppression, supply_consumption, fuel_consumption, officers, build_cost_ic, build_cost_manpower, build_time})=>(
-  <tr key={display.name}>
+  <tr key={display.name} style={{
+    whiteSpace: 'nowrap',
+  }}>
     <td className={cell_css}>
       <img src={display.counter} className={token_css} /> {display.name}
     </td>
