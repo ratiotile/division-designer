@@ -14,13 +14,13 @@ const h_flexbox = css({
 })
 
 const db_col = css({
-  flex: '0 1 auto'
+  flex: '0 1 auto',
+  overflow: 'hidden',
 })
 
 const Layout = ({ children, data }) => (
   <div style={{
-    height: '100vh',
-    overflow: 'hidden',
+    height: '100vh', // limit to viewport height
   }}>
     <Helmet
       title={data.site.siteMetadata.title}
@@ -32,12 +32,11 @@ const Layout = ({ children, data }) => (
     <Header siteTitle={data.site.siteMetadata.title} />
     <div className={h_flexbox}>
       <div className={db_col} style={{
-        overflow: 'hidden',
         width: menu_width
       }}>
         <ProdTechMenu />
       </div>
-      <div className={db_col} style={{overflow: 'hidden'}}>
+      <div className={db_col}>
         {children()}
       </div>
     </div>
