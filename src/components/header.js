@@ -1,6 +1,8 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
+export const header_height = '30px'
+
 const Header = ({ siteTitle }) => (
   <div
     style={{
@@ -11,11 +13,11 @@ const Header = ({ siteTitle }) => (
       style={{
         margin: '0 auto',
         maxWidth: 960,
-        padding: '0.5rem 0.5rem',
+        height: header_height,
       }}
     >
       <h1 style={{
-        margin: 0,
+        margin: 'auto auto',
         fontSize: 16,
       }}>
         <Link

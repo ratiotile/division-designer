@@ -2,14 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import Header from '../components/header'
+import Header, {header_height} from '../components/header'
 import './index.css'
 import {css} from 'glamor'
-import ProdTechMenu from '../components/prod-tech-menu.js'
+import ProdTechMenu, {menu_width} from '../components/prod-tech-menu.js'
 
 const h_flexbox = css({
   display: 'flex',
-  flexDirection: 'row'
+  flexDirection: 'row',
+  height: `calc(100% - ${header_height})`,
 })
 
 const db_col = css({
@@ -17,7 +18,10 @@ const db_col = css({
 })
 
 const Layout = ({ children, data }) => (
-  <div>
+  <div style={{
+    height: '100vh',
+    overflow: 'hidden',
+  }}>
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
@@ -27,10 +31,13 @@ const Layout = ({ children, data }) => (
     />
     <Header siteTitle={data.site.siteMetadata.title} />
     <div className={h_flexbox}>
-      <div className={db_col}>
+      <div className={db_col} style={{
+        overflow: 'hidden',
+        width: menu_width
+      }}>
         <ProdTechMenu />
       </div>
-      <div className={db_col}>
+      <div className={db_col} style={{overflow: 'hidden'}}>
         {children()}
       </div>
     </div>

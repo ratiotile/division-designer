@@ -2,6 +2,8 @@ import React from 'react'
 import Link from 'gatsby-link'
 import ReactTooltip from 'react-tooltip'
 import {css} from 'glamor'
+import {header_height} from '../components/header.js'
+
 import priority_icon from '../images/icons/priority.png'
 import strength_icon from '../images/icons/strength.png'
 import organization_icon from '../images/icons/organization.png'
@@ -164,7 +166,13 @@ const headerIcon = (icon, help)=>(
 
 // The main division builder page
 const DivisionPage = () => (
-  <div>
+  <div style={{
+    overflow: 'scroll',
+    position: 'absolute',
+    right: 0,
+    height: `calc(100% - ${header_height})`,
+    width: 'calc(100% - 110px)',
+  }}>
     <ReactTooltip />
     <table>
       <thead>
