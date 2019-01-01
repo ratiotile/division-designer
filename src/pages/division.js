@@ -65,6 +65,7 @@ const cell_css = css({
   margin: 0,
   fontFamily: 'monospace',
   border: '1px solid black',
+  color: 'white'
 })
 
 const divBuilderCell = (value)=>(
@@ -81,6 +82,17 @@ const support_background_color = '#65725c'
 const direct_background_color = '#717a8d'
 const inset_left = 'inset 2px 0px 1px rgba(255,255,255,0.7)'
 const inset_right = 'inset -2px 0px 1px rgba(0,0,0,0.7)'
+const combat_stat_style = {
+  color: '#f9bc08',
+  fontWeight: 800,
+  backgroundColor: 'rgba(0,0,0,0.5)'
+}
+const prod_stat_style = {
+  backgroundColor: 'rgba(0,0,0,0.55)'
+}
+const logistic_stat_style = {
+  backgroundColor: 'rgba(0,0,0,0.25)'
+}
 
 const divBuilderRow = ({display, max_strength, default_organisation, combat_width, soft_attack, hard_attack, ap_attack, armor_value, air_attack, defensiveness, toughness, air_defence, softness, maximum_speed, suppression, supply_consumption, fuel_consumption, officers, build_cost_ic, build_cost_manpower, build_time}) => {
   let background_color = 'white'
@@ -126,7 +138,10 @@ const divBuilderRow = ({display, max_strength, default_organisation, combat_widt
         }}>
           <img src={display.counter} className={token_css} />
         </div>
-        <div style={{display: 'inline-block'}}> {display.name} </div>
+        <div style={{
+          display: 'inline-block',
+          color: 'black',
+        }}> {display.name} </div>
       </div>
     </th>
     <td className={cell_css} style={{paddingLeft: '5px'}}>
@@ -135,60 +150,114 @@ const divBuilderRow = ({display, max_strength, default_organisation, combat_widt
     <td className={cell_css} style={{paddingLeft: '5px'}}>
       {default_organisation}
     </td>
-    <td className={cell_css} style={{textAlign: 'center'}}>
+    <td className={cell_css} style={{
+      textAlign: 'center',
+      ...combat_stat_style
+    }}>
       {combat_width}
     </td>
-    <td className={cell_css} style={{padding: '0 3px 0 6px'}}>
+    <td className={cell_css} style={{
+      padding: '0 3px 0 6px',
+      ...combat_stat_style
+    }}>
       {soft_attack}
     </td>
-    <td className={cell_css} style={{padding: '0 3px 0 6px'}}>
+    <td className={cell_css} style={{
+      padding: '0 3px 0 6px',
+      ...combat_stat_style
+    }}>
       {hard_attack}
     </td>
-    <td className={cell_css} style={{paddingLeft: '6px'}}>
+    <td className={cell_css} style={{
+      paddingLeft: '6px',
+      ...combat_stat_style
+    }}>
       {ap_attack}
     </td>
-    <td className={cell_css} style={{textAlign: 'center'}}>
+    <td className={cell_css} style={{
+      textAlign: 'center',
+      ...combat_stat_style
+    }}>
       {armor_value}
     </td>
-    <td className={cell_css} style={{padding: '0 3px 0 6px'}}>
+    <td className={cell_css} style={{
+      padding: '0 3px 0 6px',
+      ...combat_stat_style
+    }}>
       {air_attack}
     </td>
-    <td className={cell_css} style={{padding: '0 3px 0 6px'}}>
+    <td className={cell_css} style={{
+      padding: '0 3px 0 6px',
+      ...combat_stat_style
+    }}>
       {defensiveness}
     </td>
-    <td className={cell_css} style={{padding: '0 3px 0 6px'}}>
+    <td className={cell_css} style={{
+      padding: '0 3px 0 6px',
+      ...combat_stat_style
+    }}>
       {toughness}
     </td>
-    <td className={cell_css} style={{padding: '0 3px 0 6px'}}>
+    <td className={cell_css} style={{
+      padding: '0 3px 0 6px',
+      ...combat_stat_style
+    }}>
       {air_defence}
     </td>
-    <td className={cell_css} style={{padding: '0 3px 0 6px'}}>
+    <td className={cell_css} style={{
+      padding: '0 3px 0 6px',
+      ...combat_stat_style
+    }}>
       {softness}
     </td>
-    <td className={cell_css} style={{padding: '0 3px 0 6px'}}>
+    <td className={cell_css} style={{
+      padding: '0 3px 0 6px',
+      ...logistic_stat_style
+    }}>
       {maximum_speed}
     </td>
-    <td className={cell_css} style={{padding: '0 3px 0 6px'}}>
+    <td className={cell_css} style={{
+      padding: '0 3px 0 6px',
+      ...logistic_stat_style
+    }}>
       {suppression}
     </td>
-    <td className={cell_css} style={{padding: '0 3px 0 6px'}}>
+    <td className={cell_css} style={{
+      padding: '0 3px 0 6px',
+      ...logistic_stat_style
+    }}>
       {supply_consumption}
     </td>
-    <td className={cell_css} style={{padding: '0 3px 0 6px'}}>
+    <td className={cell_css} style={{
+      padding: '0 3px 0 6px',
+      ...logistic_stat_style
+    }}>
       {fuel_consumption}
     </td>
-    <td className={cell_css}
-        style={{padding: '0 6px 0 6px', textAlign: 'right'}}>
+    <td className={cell_css} style={{
+      padding: '0 6px 0 6px',
+      textAlign: 'right',
+      ...logistic_stat_style
+    }}>
       {officers}
     </td>
-    <td className={cell_css} style={{padding: '0 3px 0 6px'}}>
+    <td className={cell_css} style={{
+      padding: '0 3px 0 6px',
+      ...prod_stat_style
+    }}>
       {build_cost_ic}
     </td>
-    <td className={cell_css} style={{padding: '0 3px 0 6px'}}>
+    <td className={cell_css} style={{
+      padding: '0 3px 0 6px',
+      ...prod_stat_style
+    }}>
       {build_cost_manpower}
     </td>
-    <td className={cell_css}
-        style={{padding: '0 6px 0 6px', textAlign: 'right'}}>
+    <td className={cell_css} style={{
+      padding: '0 6px 0 6px',
+      textAlign: 'right',
+      ...prod_stat_style
+    }}>
       {build_time}
     </td>
   </tr>
