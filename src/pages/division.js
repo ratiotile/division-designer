@@ -63,7 +63,8 @@ const cell_css = css({
   fontSize: 12,
   padding: 0,
   margin: 0,
-  fontFamily: 'monospace'
+  fontFamily: 'monospace',
+  border: '1px solid black',
 })
 
 const divBuilderCell = (value)=>(
@@ -236,7 +237,7 @@ const DivisionPage = () => (
   }}>
     <ReactTooltip />
     <table style={{
-
+      border: '1px solid black'
     }}>
       <thead>
         <tr>
