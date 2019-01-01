@@ -43,135 +43,168 @@ r.keys().forEach(key => {
 const unit_display = {
   alpini_brigade: {
     counter: alpini_counter,
-    name: 'Alpini'
+    name: 'Alpini',
+    type: 'infantry',
   },
   alpins_brigade: {
     counter: alpins_counter,
-    name: 'Alpins'
+    name: 'Alpins',
+    type: 'infantry',
   },
   anti_air_brigade: {
     counter: aa_counter,
-    name: 'Anti-air'
+    name: 'Anti-air',
+    type: 'direct',
   },
   anti_tank_brigade: {
     counter: at_counter,
-    name: 'Anti-tank'
+    name: 'Anti-tank',
+    type: 'direct',
   },
   armor_brigade: {
     counter: arm_counter,
-    name: 'Armour'
+    name: 'Armour',
+    type: 'armour',
   },
   armored_car_brigade: {
     counter: ac_counter,
-    name: 'Armoured Car'
+    name: 'Armoured Car',
+    type: 'support',
   },
   artillery_brigade: {
     counter: art_counter,
-    name: 'Artillery'
+    name: 'Artillery',
+    type: 'indirect',
   },
   bergsjaeger_brigade: {
     counter: bergsjaeger_counter,
-    name: 'Mountain'
+    name: 'Mountain',
+    type: 'infantry',
   },
   cavalry_brigade: {
     counter: cavalry_counter,
-    name: 'Cavalry'
+    name: 'Cavalry',
+    type: 'infantry',
   },
   engineer_brigade: {
     counter: engineer_counter,
-    name: 'Engineer'
+    name: 'Engineer',
+    type: 'support',
   },
   garrison_brigade: {
     counter: garrison_counter,
-    name: 'Garrison'
+    name: 'Garrison',
+    type: 'militia',
   },
   guards_brigade: {
     counter: guards_counter,
-    name: 'Red Guards'
+    name: 'Red Guards',
+    type: 'infantry',
   },
   gurkha_brigade: {
     counter: gurkha_counter,
-    name: 'Gurkhas'
+    name: 'Gurkhas',
+    type: 'infantry',
   },
   heavy_armor_brigade: {
     counter: heavy_armor_counter,
-    name: 'Heavy Armour'
+    name: 'Heavy Armour',
+    type: 'armour',
   },
   hq_brigade: {
     counter: hq_counter,
-    name: 'Headquarters'
+    name: 'Headquarters',
+    type: 'support',
   },
   imperial_brigade: {
     counter: imperial_counter,
-    name: 'Imperial Guards'
+    name: 'Imperial Guards',
+    type: 'infantry',
   },
   infantry_brigade: {
     counter: infantry_counter,
-    name: 'Infantry'
+    name: 'Infantry',
+    type: 'infantry',
   },
   light_armor_brigade: {
     counter: light_armor_counter,
-    name: 'Light Armour'
+    name: 'Light Armour',
+    type: 'armour',
   },
   marine_brigade: {
     counter: marine_counter,
-    name: 'Marine'
+    name: 'Marine',
+    type: 'infantry',
   },
   mechanized_brigade: {
     counter: mechanized_counter,
-    name: 'Mechanised'
+    name: 'Mechanised',
+    type: 'infantry',
   },
   militia_brigade: {
     counter: militia_counter,
-    name: 'Militia'
+    name: 'Militia',
+    type: 'militia',
   },
   mot_aa_brigade: {
     counter: mot_AA_counter,
-    name: 'Motorised A-A'
+    name: 'Motorised A-A',
+    type: 'direct',
   },
   motorized_brigade: {
     counter: motorized_counter,
-    name: 'Motorised'
+    name: 'Motorised',
+    type: 'infantry',
   },
   paratrooper_brigade: {
     counter: paratrooper_counter,
-    name: 'Paratrooper'
+    name: 'Paratrooper',
+    type: 'infantry',
   },
   partisan_brigade: {
     counter: militia_counter,
-    name: 'Partisan'
+    name: 'Partisan',
+    type: 'militia',
   },
   police_brigade: {
     counter: police_counter,
-    name: 'Military Police'
+    name: 'Military Police',
+    type: 'support',
   },
   ranger_brigade: {
     counter: ranger_counter,
-    name: 'Ranger'
+    name: 'Ranger',
+    type: 'infantry',
   },
   rocket_artillery_brigade: {
     counter: rocket_artillery_counter,
-    name: 'Rocket Artillery'
+    name: 'Rocket Artillery',
+    type: 'indirect',
   },
   sp_artillery_brigade: {
     counter: sp_artillery_counter,
-    name: 'S-P Artillery'
+    name: 'S-P Artillery',
+    type: 'indirect',
   },
   sp_rct_artillery_brigade: {
     counter: sp_rct_artillery_counter,
-    name: 'S-P Rocket Artillery'
+    name: 'S-P Rocket Artillery',
+    type: 'indirect',
   },
   super_heavy_armor_brigade: {
     counter: super_heavy_armor_counter,
-    name: 'SH Armoured'
+    name: 'SH Armoured',
+    type: 'support',
   },
   tank_destroyer_brigade: {
     counter: tank_destroyer_counter,
-    name: 'Tank Destroyer'
+    name: 'Tank Destroyer',
+    type: 'direct',
   },
   waffen_brigade: {
     counter: waffenSS_counter,
-    name: 'Waffen SS'
+    name: 'Waffen SS',
+    type: 'infantry',
   },
 }
 

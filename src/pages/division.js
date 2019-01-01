@@ -72,14 +72,45 @@ const divBuilderCell = (value)=>(
   </td>
 )
 
-const divBuilderRow = ({display, max_strength, default_organisation, combat_width, soft_attack, hard_attack, ap_attack, armor_value, air_attack, defensiveness, toughness, air_defence, softness, maximum_speed, suppression, supply_consumption, fuel_consumption, officers, build_cost_ic, build_cost_manpower, build_time})=>(
+const armour_background_color = '#7b5f7d'
+const infantry_background_color = '#8b7260'
+const militia_background_color = '#8e837b'
+const artillery_background_color = '#835858'
+const support_background_color = '#65725c'
+const direct_background_color = '#717a8d'
+
+const divBuilderRow = ({display, max_strength, default_organisation, combat_width, soft_attack, hard_attack, ap_attack, armor_value, air_attack, defensiveness, toughness, air_defence, softness, maximum_speed, suppression, supply_consumption, fuel_consumption, officers, build_cost_ic, build_cost_manpower, build_time}) => {
+  let background_color = 'white'
+  switch(display.type){
+    case 'infantry':
+      background_color = infantry_background_color
+      break;
+    case 'armour':
+      background_color = armour_background_color
+      break;
+    case 'militia':
+      background_color = militia_background_color
+      break;
+    case 'direct':
+      background_color = direct_background_color
+      break;
+    case 'support':
+      background_color = support_background_color
+      break;
+    case 'indirect':
+      background_color = artillery_background_color
+      break;
+  }
+  return (
   <tr key={display.name} style={{
     whiteSpace: 'nowrap',
+    background: background_color,
   }}>
     <th className={cell_css} style={{
       position: 'sticky',
       left: 0,
-      background: 'white',
+      background: background_color,
+
     }}>
       <div>
         <div style={{
@@ -155,7 +186,7 @@ const divBuilderRow = ({display, max_strength, default_organisation, combat_widt
       {build_time}
     </td>
   </tr>
-)
+)}
 
 const tooltip = css({
   //position: 'relative',
@@ -168,12 +199,14 @@ const tooltip_text = css({
   zIndex: 1,
 })
 
+const header_background_color = '#94979d'
+
 const headerIcon = (icon, help, style={})=>(
   <th className={`${cell_css}`}
       style={Object.assign({}, style, {
         cursor: 'pointer',
         textAlign: 'center',
-        background: 'white',
+        background: header_background_color,
         // make sticky header
         position: '-webkit-sticky',
         position: 'sticky',
