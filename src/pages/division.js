@@ -3,6 +3,7 @@ import Link from 'gatsby-link'
 import ReactTooltip from 'react-tooltip'
 import {css} from 'glamor'
 import {header_height} from '../components/header.js'
+import {menu_width} from '../components/prod-tech-menu.js'
 
 import priority_icon from '../images/icons/priority.png'
 import strength_icon from '../images/icons/strength.png'
@@ -48,11 +49,14 @@ const image_css = css({
   margin: '0 auto 0 auto'
 })
 
+const token_width = '30px'
+
 const token_css = css({
   display: 'inline-block',
   padding: 0,
   margin: 0,
-  verticalAlign: '-15%'
+  verticalAlign: '-15%',
+  width: token_width,
 })
 
 const cell_css = css({
@@ -73,7 +77,16 @@ const divBuilderRow = ({display, max_strength, default_organisation, combat_widt
     whiteSpace: 'nowrap',
   }}>
     <td className={cell_css}>
-      <img src={display.counter} className={token_css} /> {display.name}
+      <div>
+        <div style={{
+          width: token_width, // needed, since image size is not used by table
+          display:'inline-block',
+          margin: '0 5px 0 5px',
+        }}>
+          <img src={display.counter} className={token_css} />
+        </div>
+        <div style={{display: 'inline-block'}}> {display.name} </div>
+      </div>
     </td>
     <td className={cell_css} style={{paddingLeft: '5px'}}>
       {max_strength}
@@ -171,7 +184,7 @@ const DivisionPage = () => (
     position: 'absolute',
     right: 0,
     height: `calc(100% - ${header_height})`,
-    width: 'calc(100% - 110px)',
+    width: `calc(100% - ${menu_width})`,
   }}>
     <ReactTooltip />
     <table>
