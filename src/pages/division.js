@@ -76,7 +76,11 @@ const divBuilderRow = ({display, max_strength, default_organisation, combat_widt
   <tr key={display.name} style={{
     whiteSpace: 'nowrap',
   }}>
-    <td className={cell_css}>
+    <th className={cell_css} style={{
+      position: 'sticky',
+      left: 0,
+      background: 'white',
+    }}>
       <div>
         <div style={{
           width: token_width, // needed, since image size is not used by table
@@ -87,7 +91,7 @@ const divBuilderRow = ({display, max_strength, default_organisation, combat_widt
         </div>
         <div style={{display: 'inline-block'}}> {display.name} </div>
       </div>
-    </td>
+    </th>
     <td className={cell_css} style={{paddingLeft: '5px'}}>
       {max_strength}
     </td>
@@ -164,18 +168,22 @@ const tooltip_text = css({
   zIndex: 1,
 })
 
-const headerIcon = (icon, help)=>(
+const headerIcon = (icon, help, style={})=>(
   <th className={`${cell_css}`}
-      style={{
+      style={Object.assign({}, style, {
         cursor: 'pointer',
-        textAlign: 'center'
-      }}
+        textAlign: 'center',
+        background: 'white',
+        // make sticky header
+        position: '-webkit-sticky',
+        position: 'sticky',
+        top: 0,
+      })}
       data-tip={help}
   >
     <img src={icon} className={image_css} />
   </th>
 )
-
 
 // The main division builder page
 const DivisionPage = () => (
@@ -188,9 +196,14 @@ const DivisionPage = () => (
   }}>
     <ReactTooltip />
     <table>
-      <thead>
+      <thead style={{
+
+      }}>
         <tr>
-          {headerIcon(priority_icon, 'priority')}
+          {headerIcon(priority_icon, 'priority', {
+            left: 0, // stick to left
+            zIndex: 1,
+          })}
           {headerIcon(strength_icon, 'Strength')}
           {headerIcon(organization_icon, 'Organization')}
           {headerIcon(combat_width_icon, 'Combat Width')}
