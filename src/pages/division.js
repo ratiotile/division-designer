@@ -44,7 +44,7 @@ for(const name in units){
 
 const image_css = css({
   display: 'block',
-  width: '24px',
+  //width: '24px',
   padding: 0,
   margin: '0 auto 0 auto'
 })
@@ -78,8 +78,8 @@ const militia_background_color = '#8e837b'
 const artillery_background_color = '#835858'
 const support_background_color = '#65725c'
 const direct_background_color = '#717a8d'
-const inset_left = 'inset 2px 0px 3px rgba(255,255,255,0.7)'
-const inset_right = 'inset -2px 0px 3px rgba(0,0,0,0.7)'
+const inset_left = 'inset 2px 0px 1px rgba(255,255,255,0.7)'
+const inset_right = 'inset -2px 0px 1px rgba(0,0,0,0.7)'
 
 const divBuilderRow = ({display, max_strength, default_organisation, combat_width, soft_attack, hard_attack, ap_attack, armor_value, air_attack, defensiveness, toughness, air_defence, softness, maximum_speed, suppression, supply_consumption, fuel_consumption, officers, build_cost_ic, build_cost_manpower, build_time}) => {
   let background_color = 'white'
@@ -113,7 +113,7 @@ const divBuilderRow = ({display, max_strength, default_organisation, combat_widt
       position: 'sticky',
       left: 0,
       background: background_color,
-      boxShadow: `inset 0px -2px 3px rgba(0,0,0,0.8), inset 0px 1px 2px rgba(255,255,255,0.0), ${inset_left}`,
+      boxShadow: `inset 0px -2px 3px rgba(0,0,0,0.8), inset 0px 1px 1px rgba(255,255,255,0.15), ${inset_left}`,
       padding: '0 5px 0 0',
       //zIndex: 1,
     }}>
@@ -243,7 +243,7 @@ const DivisionPage = () => (
           {headerIcon(priority_icon, 'priority', {
             left: 0, // stick to left
             zIndex: 1,
-            boxShadow: `${inset_left}, inset 0px -1px 1px rgba(0,0,0,0.8), inset 0px 1px 3px rgba(255,255,255,0.4)`,
+            boxShadow: `${inset_left}, inset 0px -1.2px 1px rgba(0,0,0,1.0), inset 0px 1px 1px rgba(255,255,255,0.4)`,
           })}
           {headerIcon(strength_icon, 'Strength')}
           {headerIcon(organization_icon, 'Organization')}
