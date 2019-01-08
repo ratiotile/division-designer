@@ -33,6 +33,10 @@ import waffenSS_counter from "../images/counters/waffenSS_brigade.png"
 
 const r = require.context('../../data/tfh/units', false, /\.json$/)
 
+class UnitTable {
+
+}
+
 var cache = {}
 r.keys().forEach(key => {
   var raw = r(key)
