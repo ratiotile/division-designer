@@ -7,3 +7,6 @@ npm-debug.log
 # Build directory
 /public
 .DS_Store
+
+# local specific files
+*.sublime-workspace
