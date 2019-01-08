@@ -28,6 +28,7 @@ import manpower_icon from '../images/icons/manpower.png'
 import build_time_icon from '../images/icons/build-time.png'
 
 import units from '../model/units.js'
+import Layout from '../components/index.js'
 
 // process unit data, adding in missing values
 const unit_defaults = {
@@ -297,53 +298,55 @@ const headerIcon = (icon, help, style={})=>(
 
 // The main division builder page
 const DivisionPage = () => (
-  <div style={{
-    overflow: 'scroll',
-    position: 'absolute',
-    right: 0,
-    height: `calc(100% - ${header_height})`,
-    width: `calc(100% - ${menu_width})`,
-  }}>
-    <ReactTooltip />
-    <table style={{
-      border: '1px solid black'
+  <Layout>
+    <div style={{
+      overflow: 'scroll',
+      position: 'absolute',
+      right: 0,
+      height: `calc(100% - ${header_height})`,
+      width: `calc(100% - ${menu_width})`,
     }}>
-      <thead>
-        <tr>
-          {headerIcon(priority_icon, 'priority', {
-            left: 0, // stick to left
-            zIndex: 1,
-            boxShadow: `${inset_left}, inset 0px -1.2px 1px rgba(0,0,0,1.0), inset 0px 1px 1px rgba(255,255,255,0.4)`,
-          })}
-          {headerIcon(strength_icon, 'Strength')}
-          {headerIcon(organization_icon, 'Organization')}
-          {headerIcon(combat_width_icon, 'Combat Width')}
-          {headerIcon(soft_attack_icon, 'Soft Attack')}
-          {headerIcon(hard_attack_icon, 'Hard Attack')}
-          {headerIcon(piercing_icon, 'Armor Piercing')}
-          {headerIcon(armor_icon, 'Armor')}
-          {headerIcon(anti_air_icon, 'Anti-air')}
-          {headerIcon(defensiveness_icon, 'Defensiveness')}
-          {headerIcon(toughness_icon, 'Toughness')}
-          {headerIcon(air_defense_icon, 'Air Defense')}
-          {headerIcon(softness_icon, 'Softness')}
-          {headerIcon(speed_icon, 'Max Speed')}
-          {headerIcon(suppression_icon, 'Partisan Suppression')}
-          {headerIcon(supply_icon, 'Supply Consumption')}
-          {headerIcon(fuel_icon, 'Fuel Consumption')}
-          {headerIcon(officers_icon, 'Officers')}
-          {headerIcon(ic_cost_icon, 'IC Cost')}
-          {headerIcon(manpower_icon, 'Manpower Cost')}
-          {headerIcon(build_time_icon, 'Build Time', {
-            boxShadow: `${inset_header_h}, ${inset_right}`,
-          })}
-        </tr>
-      </thead>
-      <tbody>
-        {land_units.map(divBuilderRow)}
-      </tbody>
-    </table>
-  </div>
+      <ReactTooltip />
+      <table style={{
+        border: '1px solid black'
+      }}>
+        <thead>
+          <tr>
+            {headerIcon(priority_icon, 'priority', {
+              left: 0, // stick to left
+              zIndex: 1,
+              boxShadow: `${inset_left}, inset 0px -1.2px 1px rgba(0,0,0,1.0), inset 0px 1px 1px rgba(255,255,255,0.4)`,
+            })}
+            {headerIcon(strength_icon, 'Strength')}
+            {headerIcon(organization_icon, 'Organization')}
+            {headerIcon(combat_width_icon, 'Combat Width')}
+            {headerIcon(soft_attack_icon, 'Soft Attack')}
+            {headerIcon(hard_attack_icon, 'Hard Attack')}
+            {headerIcon(piercing_icon, 'Armor Piercing')}
+            {headerIcon(armor_icon, 'Armor')}
+            {headerIcon(anti_air_icon, 'Anti-air')}
+            {headerIcon(defensiveness_icon, 'Defensiveness')}
+            {headerIcon(toughness_icon, 'Toughness')}
+            {headerIcon(air_defense_icon, 'Air Defense')}
+            {headerIcon(softness_icon, 'Softness')}
+            {headerIcon(speed_icon, 'Max Speed')}
+            {headerIcon(suppression_icon, 'Partisan Suppression')}
+            {headerIcon(supply_icon, 'Supply Consumption')}
+            {headerIcon(fuel_icon, 'Fuel Consumption')}
+            {headerIcon(officers_icon, 'Officers')}
+            {headerIcon(ic_cost_icon, 'IC Cost')}
+            {headerIcon(manpower_icon, 'Manpower Cost')}
+            {headerIcon(build_time_icon, 'Build Time', {
+              boxShadow: `${inset_header_h}, ${inset_right}`,
+            })}
+          </tr>
+        </thead>
+        <tbody>
+          {land_units.map(divBuilderRow)}
+        </tbody>
+      </table>
+    </div>
+  </Layout>
 )
 
 export default DivisionPage

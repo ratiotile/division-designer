@@ -23,13 +23,13 @@ const Layout = ({ children, data }) => (
     height: '100vh', // limit to viewport height
   }}>
     <Helmet
-      title={data.site.siteMetadata.title}
+      title={'data.site.siteMetadata.title'}
       meta={[
         { name: 'description', content: 'Sample' },
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <Header siteTitle={data.site.siteMetadata.title} />
+    <Header siteTitle={'data.site.siteMetadata.title'} />
     <div className={h_flexbox}>
       <div className={db_col} style={{
         width: menu_width
@@ -37,7 +37,7 @@ const Layout = ({ children, data }) => (
         <ProdTechMenu />
       </div>
       <div className={db_col}>
-        {children()}
+        {children}
       </div>
     </div>
   </div>
