@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import { StaticQuery, graphql } from 'gatsby'
 
 import Header, {header_height} from '../components/header'
 import './index.css'
@@ -18,29 +19,32 @@ const db_col = css({
   overflow: 'hidden',
 })
 
-const Layout = ({ children, data }) => (
-  <div style={{
-    height: '100vh', // limit to viewport height
-  }}>
-    <Helmet
-      title={'data.site.siteMetadata.title'}
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
-      ]}
-    />
-    <Header siteTitle={'data.site.siteMetadata.title'} />
-    <div className={h_flexbox}>
-      <div className={db_col} style={{
-        width: menu_width
-      }}>
-        <ProdTechMenu />
-      </div>
-      <div className={db_col}>
-        {children}
-      </div>
-    </div>
-  </div>
+const Layout = ({ children }) => (
+  <StaticQuery
+    query={title_query}
+    render={(data) => (
+      <>
+        <Helmet
+          defaultTitle={data.site.siteMetadata.title}
+          meta={[
+            { name: 'description', content: 'Sample' },
+            { name: 'keywords', content: 'sample, something' },
+          ]}
+        />
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <div className={h_flexbox}>
+          <div className={db_col} style={{
+            width: menu_width
+          }}>
+            <ProdTechMenu />
+          </div>
+          <div className={db_col}>
+            {children}
+          </div>
+        </div>
+      </>
+    )}
+  />
 )
 
 Layout.propTypes = {
@@ -49,8 +53,8 @@ Layout.propTypes = {
 
 export default Layout
 
-export const query = graphql`
-  query SiteTitleQuery {
+export const title_query = graphql`
+  query LayoutQuery {
     site {
       siteMetadata {
         title
@@ -58,3 +62,4 @@ export const query = graphql`
     }
   }
 `
+
