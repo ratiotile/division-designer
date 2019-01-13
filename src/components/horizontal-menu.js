@@ -1,19 +1,23 @@
 import React from 'react'
 
 export const Menu = ({children, style}) => {
-  return (
-    <div style={style}>
+  return (<nav>
+    <ul style={Object.assign({
+      listStyleType: 'none'
+    }, style)}>
     {React.Children.map(children, (child) => (
-      <span>
+      <Item>
         {child}
-      </span>
+      </Item>
     ))}
-    </div>
-  )
+    </ul>
+  </nav>)
 }
 
 export const Item = ({children}) => {
   return (
-    {children}
+    <li style={{display: 'inline-block'}}>
+      {children}
+    </li>
   )
 }
