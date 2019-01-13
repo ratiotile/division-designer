@@ -4,7 +4,6 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Header, {header_height} from '../components/header'
-import './index.css'
 import {css} from 'glamor'
 import ProdTechMenu, {menu_width} from '../components/prod-tech-menu.js'
 

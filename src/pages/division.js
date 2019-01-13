@@ -128,22 +128,21 @@ const divBuilderRow = ({display, max_strength, default_organisation, combat_widt
       left: 0,
       background: background_color,
       boxShadow: `inset 0px -2px 3px rgba(0,0,0,0.8), inset 0px 1px 1px rgba(255,255,255,0.15), ${inset_left}`,
-      padding: '0 5px 0 0',
+      padding: '0 0 0 0',
       //zIndex: 1,
     }}>
-      <div>
-        <div style={{
-          width: token_width, // needed, since image size is not used by table
-          display:'inline-block',
-          margin: '0 5px 0 5px',
-        }}>
-          <img src={display.counter} className={token_css} />
-        </div>
-        <div style={{
-          display: 'inline-block',
-          color: 'black',
-        }}> {display.name} </div>
+      <div style={{
+        width: token_width, // needed, since image size is not used by table
+        display:'inline-block',
+        margin: '0 3px 0 5px',
+      }}>
+        <img src={display.counter} className={token_css} />
       </div>
+      <div style={{
+        display: 'inline-block',
+        color: 'black',
+        margin: '0 5px 0 3px',
+      }}> {display.name} </div>
     </th>
     <td className={cell_css} style={{paddingLeft: '5px'}}>
       {max_strength}
