@@ -1,0 +1,26 @@
+@startuml
+title Component Design
+
+[HOI3 data - JSON] as data
+
+package "Model - Nim" {
+    [StatModel] as model
+    [AppState] as app_state
+    [Controller] as controller
+    model <-- controller
+    app_state <- controller
+    model <-- app_state
+}
+data <-- model
+
+package "GUI - GatsbyJS" {
+    [View Controller] as view_controller
+    [View] as view
+    view <-> view_controller
+}
+controller <-- view_controller
+
+actor user
+view <-- user
+
+@enduml
