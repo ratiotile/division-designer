@@ -1,0 +1,189 @@
+@startuml
+
+title Stat Model
+
+class TerrainModifier {
+  attack
+  defense
+  movement
+}
+
+class TerrainStats {
+  plains
+  forest
+  hills
+  mountain
+  desert
+  arctic
+  amphibious
+  urban
+  marsh
+  river
+  fort
+}
+TerrainModifier --* TerrainStats
+
+interface UnitComponent {
+
+}
+
+class CoreStats {
+  name: string
+  icon: string
+  priority: int
+
+  ic_cost
+  mp_cost
+  build_time
+  speed
+  organization
+  morale
+  strength
+  officers
+  air_defense
+  air_attack
+  fuel_consumption
+  supply_consumption
+  radio_strength
+  addStats(CoreStats other)
+}
+UnitComponent <|-- CoreStats
+
+class LandStats {
+  defensiveness
+  toughness
+  softness
+  suppression
+  ap_attack
+  terrain_modifiers
+  combat_width
+  transport_weight
+  addStats(LandStats other)
+}
+UnitComponent <|-- LandStats
+TerrainStats <-- LandStats
+
+class GroundAttack {
+  soft_attack
+  hard_attack
+  addStats(GroundAttack other)
+}
+UnitComponent <|-- GroundAttack
+
+class SortieStats {
+  range
+  air_detection
+  surface_detection
+  transport_capacity
+  sea_attack
+  sub_attack
+  addStats(SortieStats other)
+}
+UnitComponent <|-- SortieStats
+
+class AirStats {
+  is_cag
+  strategic_attack
+  surface_defense
+  addStats(AirStats other)
+}
+UnitComponent <|-- AirStats
+
+class NavalStats {
+  is_capital
+  hull
+  convoy_attack
+  shore_bombardment
+  sub_detection
+  sea_defense
+  visibility
+  addStats(NavalStats other)
+}
+UnitComponent <|-- NavalStats
+
+abstract class Unit {
+  type
+  is_enabled
+  applyTech(TechEffect effect)
+  getStats()
+}
+CoreStats <-- Unit
+
+class AirUnit {
+
+}
+Unit <|-- AirUnit
+AirStats <-- AirUnit
+SortieStats <-- AirUnit
+GroundAttack <-- AirUnit
+
+class LandUnit {
+
+}
+Unit <|-- LandUnit
+GroundAttack <-- LandUnit
+LandStats <-- LandUnit
+
+class SeaUnit {
+}
+Unit <|-- SeaUnit
+SortieStats <-- SeaUnit
+NavalStats <-- SeaUnit
+
+class UnitManager {
+  units: Map<string, Unit>
+}
+Unit <-- UnitManager
+
+class TechEffect {
+  unit_name: string
+  land_stats: LandStats
+  ground_attack: GroundAttack
+  core_stats: CoreStats
+  air_stats: AirStats
+  sortie_stats: SortieStats
+  naval_stats: NavalStats
+}
+LandStats <- TechEffect
+CoreStats <-- TechEffect
+AirStats <-- TechEffect
+SortieStats <-- TechEffect
+NavalStats <-- TechEffect
+GroundAttack <-- TechEffect
+TechEffect <- Unit
+
+class TechPrerequisite {
+  name: string
+  level: int
+  is_achieved: bool
+}
+
+class Events {
+  emitTechLevelChanged(name, level)
+  listenTechLevelChanged(name)
+}
+Events <-- Tech
+
+class Tech {
+  name: string
+  level: int
+  max_level: const int
+  effects: TechEffect[]
+  prerequisites: TechPrerequisite[]
+  update_unit(unit_name)
+  getData()
+}
+Unit <--- Tech
+TechEffect --* Tech
+TechPrerequisite <-- Tech
+UnitManager <-- Tech
+
+class TechManager {
+  techs: map<string, Tech>
+  increaseLevel(string)
+  decreaseLevel(string)
+}
+Tech <-- TechManager
+Events <-- TechManager
+
+@enduml
