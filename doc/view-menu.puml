@@ -1,0 +1,62 @@
+@startuml
+
+abstract Composable {
+}
+
+class Clickable {
+}
+Clickable --|> Composable
+
+abstract HorizontalStretch {
+}
+
+abstract HorizontalGrow {
+}
+
+abstract HorizontalScroll {
+}
+
+class HorizontalNav {
+  Array<Component>: items
+}
+HorizontalNav --|> HorizontalGrow
+
+class Button {
+}
+Button *-- Clickable
+
+class ImageButton {
+}
+ImageButton --|> Button
+
+class InfoRepeater {
+}
+InfoRepeater *-- Clickable
+InfoRepeater --|> HorizontalGrow
+
+class FullScreenOverlay {
+}
+FullScreenOverlay *-- Clickable
+
+class DropDownMenu {
+}
+DropDownMenu *-- FullScreenOverlay
+DropDownMenu *-- Clickable
+
+class ProductionMenu {
+}
+ProductionMenu *-- DropDownMenu
+ProductionMenu *-- ImageButton
+
+class TechMenuButton {
+}
+TechMenuButton --|> ImageButton
+
+class Hoi3sMainNav {
+}
+Hoi3sMainNav *-- TechMenuButton
+Hoi3sMainNav *-- InfoRepeater
+Hoi3sMainNav *-- ProductionMenu
+Hoi3sMainNav --|> HorizontalNav
+
+@enduml

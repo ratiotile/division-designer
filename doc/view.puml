@@ -1,0 +1,72 @@
+@startuml
+
+class LandPicker {
+}
+
+class TerrainInfo {
+}
+
+class DerivedStats {
+}
+
+class VerticalSplitter {
+}
+
+class Checkbox {
+}
+Checkbox *-- Clickable
+
+class CombinedArms {
+}
+CombinedArms *-- Image
+
+class Brigade {
+}
+Brigade *-- Button
+Brigade *-- Image
+
+class FormationBrigades {
+}
+FormationBrigades *-- Brigade
+
+class FormationCost {
+}
+
+class FormationStatsBox {
+
+}
+FormationStatsBox *-- Checkbox
+FormationStatsBox *-- CombinedArms
+FormationStatsBox *-- FormationCost
+
+class FormationInfo {
+}
+FormationInfo *-- FormationBrigades
+FormationInfo *-- FormationStatsBox
+
+
+class DivisionStatCell {
+}
+
+class DivisionStatColumn {
+}
+DivisionStatColumn *-- DivisionStatCell
+
+class DivisionBasicStats {
+}
+DivisionBasicStats *-- VerticalSplitter
+DivisionBasicStats *-- FormationInfo
+DivisionBasicStats *-- DivisionStatColumn
+
+class DivisionInfo {
+}
+DivisionInfo *-- DivisionBasicStats
+DivisionInfo *-- TerrainInfo
+DivisionInfo *-- DerivedStats
+
+class DivisionBuilder {
+}
+DivisionBuilder *-- LandPicker
+DivisionBuilder *-- DivisionInfo
+
+@enduml
