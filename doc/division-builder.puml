@@ -14,11 +14,14 @@ class VerticalSplitter {
 
 class Checkbox {
 }
-Checkbox *-- Clickable
+
+class CombinedArmsIcon {
+}
+CombinedArmsIcon *-- Image
 
 class CombinedArms {
 }
-CombinedArms *-- Image
+CombinedArms *-- CombinedArmsIcon
 
 class Brigade {
 }
@@ -47,6 +50,7 @@ FormationInfo *-- FormationStatsBox
 
 class DivisionStatCell {
 }
+DivisionStatCell *-- Image
 
 class DivisionStatColumn {
 }
@@ -68,5 +72,11 @@ class DivisionBuilder {
 }
 DivisionBuilder *-- LandPicker
 DivisionBuilder *-- DivisionInfo
+
+' Uncomment to show component relationships
+'!include InputComponents.puml!0
+'!include InputComponents.puml!division
+!include resize-components.puml!0
+!include resize-components.puml!division
 
 @enduml

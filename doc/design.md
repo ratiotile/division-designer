@@ -23,4 +23,4 @@ Technology view looks like the HOI3 tech screen, with tech area tabs across the 
 
 Unit view is divided into 3 tabs: Land, Air, Sea. There is a central table that lists all the unit types. A formation box shows the selected units and quantities. The stats box shows calculated stats for the built formation.
 
-A menu bar on the top of the screen 
+A menu bar on the top of the screen navigates between Formation Builder pages and Technology pages. The drop-downs [operate across desktop and mobile seamlessly,](https://codereview.stackexchange.com/questions/38239/handling-hover-events-on-a-touch-screen) hover on desktop, touch on mobile. These user events are to be handled via composition of InputComponents.

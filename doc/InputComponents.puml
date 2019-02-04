@@ -1,0 +1,31 @@
+@startuml
+
+interface InputComponent {
+}
+
+class Clickable {
+}
+Clickable --|> InputComponent
+
+class HoverTouch {
+}
+HoverTouch --|> InputComponent
+
+@enduml
+
+@startuml(id=menu)
+
+Button *-- Clickable
+FullScreenOverlay *-- Clickable
+DropDownMenu *-- Clickable
+InfoRepeater *-- Clickable
+
+@enduml
+
+@startuml(id=division)
+
+CombinedArmsIcon *-- HoverTouch
+DivisionStatCell *-- HoverTouch
+Checkbox *-- Clickable
+
+@enduml

@@ -1,0 +1,33 @@
+@startuml
+
+interface Resizable {
+}
+
+class ProportionalStretch {
+keeps aspect ratio
+}
+ProportionalStretch --|> Resizable
+
+class HorizontalGrow {
+only gets wider
+}
+HorizontalGrow --|> Resizable
+
+class HorizontalScroll {
+constant size, scroll if needed
+}
+HorizontalScroll --|> Resizable
+
+@enduml
+@startuml(id=menu)
+
+HorizontalNav --|> HorizontalGrow
+InfoRepeater --|> HorizontalGrow
+
+@enduml
+@startuml(id=division)
+
+LandPicker *-- HorizontalScroll
+DivisionBasicStats *-- ProportionalStretch
+
+@enduml
